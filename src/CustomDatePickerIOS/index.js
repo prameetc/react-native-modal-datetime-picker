@@ -193,6 +193,20 @@ export default class CustomDatePickerIOS extends React.PureComponent {
               onDateChange={this._handleDateChange}
             />
           </View>
+          <View>
+            <Text style={styles.text}>Choose Slot Duration</Text>
+            <View style={styles.buttons}>
+              <Button bordered={duration === 15} onPress={() => this.setState({ duration: 15 })}>
+                <Text>15 Min</Text>
+              </Button>
+              <Button bordered={duration === 30} onPress={() => this.setState({ duration: 30 })}>
+                <Text>30 Min</Text>
+              </Button>
+              <Button bordered={duration === 45} onPress={() => this.setState({ duration: 45 })}>
+                <Text>45 Min</Text>
+              </Button>
+            </View>
+          </View>
           <TouchableHighlight
             style={styles.confirmButton}
             underlayColor="#ebebeb"
