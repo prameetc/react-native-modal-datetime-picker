@@ -129,6 +129,8 @@ export default class CustomDatePickerIOS extends React.PureComponent {
       ...otherProps
     } = this.props;
 
+    const { duration } = this.state;
+
     const titleContainer = (
       <View style={styles.titleContainer}>
         <Text style={[styles.title, titleStyle]}>{titleIOS}</Text>
