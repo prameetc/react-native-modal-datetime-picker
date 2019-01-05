@@ -1,6 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { DatePickerIOS, Text, TouchableHighlight, View } from "react-native";
+import { Button } from 'native-base';
 import ReactNativeModal from "react-native-modal";
 
 import styles from "./index.style";
