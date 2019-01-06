@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { DatePickerIOS, Text, TouchableHighlight, View } from "react-native";
-import { Button } from 'native-base';
+import {DatePickerIOS, Text, TouchableHighlight, View} from "react-native";
+import {Button} from "native-base";
 import ReactNativeModal from "react-native-modal";
 
 import styles from "./index.style";
@@ -52,7 +52,7 @@ export default class CustomDatePickerIOS extends React.PureComponent {
     date: this.props.date,
     userIsInteractingWithPicker: false,
     minuteInterval: this.props.minuteInterval || 1,
-    duration: 0,
+    duration: 0
   };
 
   componentWillReceiveProps(nextProps) {
@@ -70,7 +70,7 @@ export default class CustomDatePickerIOS extends React.PureComponent {
   };
 
   _handleConfirm = () => {
-    const { duration } = this.state;
+    const {duration} = this.state;
     this.confirmed = true;
     this.props.onConfirm(this.state.date, duration);
     this._resetDate();
@@ -131,7 +131,7 @@ export default class CustomDatePickerIOS extends React.PureComponent {
       ...otherProps
     } = this.props;
 
-    const { duration } = this.state;
+    const {duration} = this.state;
 
     const titleContainer = (
       <View style={styles.titleContainer}>
@@ -183,7 +183,8 @@ export default class CustomDatePickerIOS extends React.PureComponent {
         {...reactNativeModalPropsIOS}
       >
         <View style={[styles.datepickerContainer, datePickerContainerStyleIOS]}>
-          {!hideTitleContainerIOS && (customTitleContainerIOS || titleContainer)}
+          {!hideTitleContainerIOS &&
+            (customTitleContainerIOS || titleContainer)}
           <View
             onStartShouldSetResponderCapture={
               neverDisableConfirmIOS !== true ? this._handleUserTouchInit : null
@@ -199,16 +200,28 @@ export default class CustomDatePickerIOS extends React.PureComponent {
             />
           </View>
           <View>
-            <Text style={styles.text}>Choose Slot Duration</Text>
+            <Text style={styles.topText}>Choose Slot Duration</Text>
             <View style={styles.buttons}>
-              <Button bordered={duration === 15} onPress={() => this.setState({ duration: 15 })}>
-                <Text>15 Min</Text>
+              <Button
+                style={styles.button}
+                bordered={duration === 15}
+                onPress={() => this.setState({duration: 15})}
+              >
+                <Text style={styles.text}>15 Min</Text>
               </Button>
-              <Button bordered={duration === 30} onPress={() => this.setState({ duration: 30 })}>
-                <Text>30 Min</Text>
+              <Button
+                style={styles.button}
+                bordered={duration === 30}
+                onPress={() => this.setState({duration: 30})}
+              >
+                <Text style={styles.text}>30 Min</Text>
               </Button>
-              <Button bordered={duration === 45} onPress={() => this.setState({ duration: 45 })}>
-                <Text>45 Min</Text>
+              <Button
+                style={styles.button}
+                bordered={duration === 45}
+                onPress={() => this.setState({duration: 45})}
+              >
+                <Text style={styles.text}>45 Min</Text>
               </Button>
             </View>
           </View>

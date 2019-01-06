@@ -1,13 +1,13 @@
-import { StyleSheet, Dimensions, Platform } from "react-native";
+import {StyleSheet, Dimensions, Platform} from "react-native";
 
 export const isIphoneX = () => {
-  const { height, width } = Dimensions.get("window");
+  const {height, width} = Dimensions.get("window");
 
   return (
     Platform.OS === "ios" &&
     !Platform.isPad &&
     !Platform.isTVOS &&
-    ((height === 812 || width === 812) || (height === 896 || width === 896))
+    (height === 812 || width === 812 || (height === 896 || width === 896))
   );
 };
 
@@ -72,15 +72,20 @@ export default StyleSheet.create({
     backgroundColor: "transparent"
   },
   buttons: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    padding: 12,
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    padding: 12
   },
   button: {
     width: 110,
+    padding: 24
+  },
+  topText: {
+    alignSelf: "center"
   },
   text: {
-    alignSelf: 'center',
-  },
+    alignSelf: "center",
+    color: "white"
+  }
 });
