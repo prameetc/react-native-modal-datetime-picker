@@ -51,7 +51,8 @@ export default class CustomDatePickerIOS extends React.PureComponent {
   state = {
     date: this.props.date,
     userIsInteractingWithPicker: false,
-    minuteInterval: this.props.minuteInterval || 1
+    minuteInterval: this.props.minuteInterval || 1,
+    duration: 0,
   };
 
   componentWillReceiveProps(nextProps) {
@@ -69,8 +70,9 @@ export default class CustomDatePickerIOS extends React.PureComponent {
   };
 
   _handleConfirm = () => {
+    const { duration } = this.state;
     this.confirmed = true;
-    this.props.onConfirm(this.state.date);
+    this.props.onConfirm(this.state.date, duration);
     this._resetDate();
   };
 

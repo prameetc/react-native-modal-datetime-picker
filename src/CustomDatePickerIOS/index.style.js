@@ -70,5 +70,17 @@ export default StyleSheet.create({
     fontSize: BUTTON_FONT_SIZE,
     fontWeight: "600",
     backgroundColor: "transparent"
-  }
+  },
+  buttons: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    padding: 12,
+  },
+  button: {
+    width: 110,
+  },
+  text: {
+    alignSelf: 'center',
+  },
 });
