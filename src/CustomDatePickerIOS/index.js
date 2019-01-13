@@ -205,23 +205,23 @@ export default class CustomDatePickerIOS extends React.PureComponent {
               <Button
                 style={styles.button}
                 bordered={duration === 15}
-                onPress={() => this.setState({duration: 15})}
+                onPress={() => this.setState({ duration: 15 })}
               >
-                <Text style={styles.text}>15 Min</Text>
+                <Text style={duration === 15 ? styles.activeText : styles.text}>15 Min</Text>
               </Button>
               <Button
                 style={styles.button}
                 bordered={duration === 30}
-                onPress={() => this.setState({duration: 30})}
+                onPress={() => this.setState({ duration: 30 })}
               >
-                <Text style={styles.text}>30 Min</Text>
+                <Text style={duration === 30 ? styles.activeText : styles.text}>30 Min</Text>
               </Button>
               <Button
                 style={styles.button}
                 bordered={duration === 45}
-                onPress={() => this.setState({duration: 45})}
+                onPress={() => this.setState({ duration: 45 })}
               >
-                <Text style={styles.text}>45 Min</Text>
+                <Text style={duration === 45 ? styles.activeText : styles.text}>45 Min</Text>
               </Button>
             </View>
           </View>

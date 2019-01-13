@@ -87,5 +87,9 @@ export default StyleSheet.create({
   text: {
     alignSelf: "center",
     color: "white"
+  },
+  activeText: {
+    alignSelf: "center",
+    color: "#31CF9E",
   }
 });
